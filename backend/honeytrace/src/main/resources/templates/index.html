@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>HoneyTrace SOC Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- ================= Sidebar ================= -->
+
+    <div class="sidebar">
+
+        <h2 class="brand">🍯 HoneyTrace</h2>
+
+        <p class="brand-subtitle">
+            Security Operations Center
+        </p>
+
+        <nav class="menu">
+
+            <a class="active" th:href="@{/}">
+                🏠 Home
+            </a>
+
+            <a th:href="@{/attackers}">
+                👤 Attackers
+            </a>
+
+            <a th:href="@{/credentials}">
+                🔑 Credentials
+            </a>
+
+            <a th:href="@{/analysis}">
+                🤖 AI Analysis
+            </a>
+
+            <a th:href="@{/map}">
+                🌍 Attack Map
+            </a>
+
+            <a th:href="@{/reports}">
+                📄 Reports
+            </a>
+
+            <a th:href="@{/settings}">
+                ⚙ Settings
+            </a>
+
+        </nav>
+
+    </div>
+
+    <!-- ================= Main Content ================= -->
+
+	<!-- ================= Main Content ================= -->
+
+	<div class="content">
+
+	    <!-- Hero Section -->
+
+	    <div class="content-card text-center" style="padding:60px; background:linear-gradient(135deg,#2563eb,#1d4ed8); color:white;">
+
+	        <h1 style="font-size:48px;font-weight:700;">
+	            🍯 HoneyTrace v2.0
+	        </h1>
+
+	        <h4 style="margin-top:15px;">
+	            AI Powered Honeypot & Threat Intelligence Platform
+	        </h4>
+
+	        <p style="margin-top:25px;font-size:18px;opacity:.95;max-width:850px;margin-left:auto;margin-right:auto;line-height:1.8;">
+
+	            Detect malicious attackers, capture login attempts,
+	            analyse cyber threats using Artificial Intelligence,
+	            visualize attack origins and generate professional
+	            digital forensic investigation reports.
+
+	        </p>
+
+	        <hr style="background:white;margin:35px auto;width:120px;height:2px;border:none;">
+
+	        <h5 style="font-weight:600;">Developed by</h5>
+
+	        <h3 style="margin-top:10px;">Aditi Bodke</h3>
+
+	        <p>Diploma in Information Technology</p>
+
+	    </div>
+
+
+	    <!-- About -->
+
+	    <div class="content-card">
+
+	        <h2>About HoneyTrace</h2>
+
+	        <p style="margin-top:20px;line-height:2;">
+
+	            HoneyTrace is an AI-powered cybersecurity platform designed
+	            to detect malicious SSH login attempts using an intelligent
+	            honeypot. The system records attacker behaviour, captures
+	            usernames and passwords, analyses threats using Artificial
+	            Intelligence, visualizes attack locations on an interactive
+	            world map and generates professional PDF investigation reports.
+
+	        </p>
+
+	    </div>
+
+
+	    <!-- Core Features -->
+
+	    <div class="content-card">
+
+	        <h2 class="mb-4">Core Security Modules</h2>
+
+	        <div class="guide-grid">
+
+	            <div class="guide-card">
+
+	                <div class="guide-icon">🛡</div>
+
+	                <h4>SSH Honeypot</h4>
+
+	                <p>
+	                    Detects and captures malicious SSH login attempts.
+	                </p>
+
+	            </div>
+
+	            <div class="guide-card">
+
+	                <div class="guide-icon">👤</div>
+
+	                <h4>Attacker Profiling</h4>
+
+	                <p>
+	                    Records attacker IP, location and risk score.
+	                </p>
+
+	            </div>
+
+	            <div class="guide-card">
+
+	                <div class="guide-icon">🔑</div>
+
+	                <h4>Credential Capture</h4>
+
+	                <p>
+	                    Stores usernames and passwords used by attackers.
+	                </p>
+
+	            </div>
+
+	            <div class="guide-card">
+
+	                <div class="guide-icon">🤖</div>
+
+	                <h4>AI Threat Analysis</h4>
+
+	                <p>
+	                    Analyses attacks and recommends security actions.
+	                </p>
+
+	            </div>
+
+	            <div class="guide-card">
+
+	                <div class="guide-icon">🌍</div>
+
+	                <h4>Attack Map</h4>
+
+	                <p>
+	                    Visualize attacker locations around the world.
+	                </p>
+
+	            </div>
+
+	            <div class="guide-card">
+
+	                <div class="guide-icon">📄</div>
+
+	                <h4>PDF Reports</h4>
+
+	                <p>
+	                    Generate professional digital forensic reports.
+	                </p>
+
+	            </div>
+
+	        </div>
+
+	    </div>
+
+
+	    <!-- Workflow -->
+
+	    <div class="content-card text-center">
+
+	        <h2>HoneyTrace Workflow</h2>
+
+	        <div class="row mt-5">
+
+	            <div class="col">
+
+	                <h1>👤</h1>
+
+	                <h5>Attacker</h5>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>➡</h1>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>🛡</h1>
+
+	                <h5>SSH Honeypot</h5>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>➡</h1>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>🔑</h1>
+
+	                <h5>Credentials</h5>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>➡</h1>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>🤖</h1>
+
+	                <h5>AI Analysis</h5>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>➡</h1>
+
+	            </div>
+
+	            <div class="col">
+
+	                <h1>📄</h1>
+
+	                <h5>Report</h5>
+
+	            </div>
+
+	        </div>
+
+	    </div>
+
+
+	    <!-- Navigation Guide -->
+
+	    <div class="content-card">
+
+	        <h2>Getting Started</h2>
+
+	        <ol style="margin-top:20px;line-height:2;">
+
+	            <li>Start the HoneyTrace SSH Honeypot server.</li>
+
+	            <li>Perform an SSH login attempt from another device.</li>
+
+	            <li>Open <strong>Attackers</strong> to monitor detected attackers.</li>
+
+	            <li>View captured usernames and passwords in <strong>Credentials</strong>.</li>
+
+	            <li>Analyse attacker behaviour using <strong>AI Analysis</strong>.</li>
+
+	            <li>Visualize attack locations in <strong>Attack Map</strong>.</li>
+
+	            <li>Generate a professional investigation report from <strong>Reports</strong>.</li>
+
+	        </ol>
+
+	        <div class="alert alert-primary mt-4">
+
+	            <strong>Tip:</strong> All HoneyTrace modules are available from the left sidebar.
+
+	        </div>
+
+	    </div>
+
+
+	    <!-- Technologies -->
+
+	    <div class="content-card">
+
+	        <h2>Technology Stack</h2>
+
+	        <div class="row text-center mt-4">
+
+	            <div class="col-md-2">
+	                <h1>☕</h1>
+	                <p>Java 25</p>
+	            </div>
+
+	            <div class="col-md-2">
+	                <h1>🍃</h1>
+	                <p>Spring Boot</p>
+	            </div>
+
+	            <div class="col-md-2">
+	                <h1>🐍</h1>
+	                <p>Python</p>
+	            </div>
+
+	            <div class="col-md-2">
+	                <h1>🐬</h1>
+	                <p>MySQL</p>
+	            </div>
+
+	            <div class="col-md-2">
+	                <h1>🤖</h1>
+	                <p>Artificial Intelligence</p>
+	            </div>
+
+	            <div class="col-md-2">
+	                <h1>🌍</h1>
+	                <p>Leaflet Maps</p>
+	            </div>
+
+	        </div>
+
+	    </div>
+
+
+	    <!-- Footer -->
+
+	    <div class="text-center mt-5 mb-3 text-secondary">
+
+	        <h5>HoneyTrace v2.0</h5>
+
+	        <p>
+	            AI Powered Honeypot & Threat Intelligence Platform
+	        </p>
+
+	        <strong>Developed by Aditi Bodke</strong>
+
+	    </div>
+
+	</div>
+<script src="/js/script.js"></script>
+
+</body>
+
+							</html>
